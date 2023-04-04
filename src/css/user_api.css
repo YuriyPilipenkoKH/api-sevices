@@ -77,6 +77,12 @@ outline: none;
     fill: #ff0;
 }
 
+.search-btn:disabled,
+.delete-btn:disabled {
+ color: #777;
+ cursor: none;
+}
+
 
 .lens {
     fill: #fff

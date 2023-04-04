@@ -7,6 +7,7 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 // import { doc } from "prettier";
 import '../../css/user_api.css'
 import '../toIndex'
+import { onToTop } from "../scroll";
 
 const lightbox = new SimpleLightbox('.gallery .user_img', {
   captionsData: 'alt',
@@ -16,17 +17,21 @@ const lightbox = new SimpleLightbox('.gallery .user_img', {
 
 document.querySelector('#root').innerHTML = headerOfUserApi
 
-const refs = {
+export const refs = {
     head: document.querySelector('.head'),
     form: document.querySelector('#search-form'),
     sub: document.querySelector('.search-btn'),
     del: document.querySelector('.delete-btn'),
+    gal : document.querySelector('.gallery'),
+    toTop : document.querySelector('.back-to-top'),
 }
 
-console.log(refs.form);
+refs.del.disabled = true;
+refs.toTop.addEventListener('click', onToTop);
 
 
 refs.form.addEventListener('submit', submitHandler)
+refs.del.addEventListener('click', deleteUser)
 
  function submitHandler(e) {
   e.preventDefault()
@@ -36,6 +41,7 @@ refs.form.addEventListener('submit', submitHandler)
   .then(user => {
 
     renderUser(user)
+    refs.del.disabled = false;
       lightbox.refresh();
 })
 
@@ -43,6 +49,11 @@ refs.form.addEventListener('submit', submitHandler)
    
     Notify.failure(error.message)
 })}
+
+function deleteUser() {
+  console.log('innerHTML = ');
+  refs.gal.innerHTML = ''
+}
 
 
 
