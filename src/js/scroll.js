@@ -3,8 +3,8 @@ import { refs } from "./user_api/user_api";
 export { onScroll, onToTop, onToDown };
 
 
-// window.addEventListener('scroll', onScroll);
-//
+window.addEventListener('scroll', onScroll);
+
 
 
 function onScroll() {
@@ -12,10 +12,10 @@ function onScroll() {
   const coords = document.documentElement.clientHeight;
 
   if (scrolled > coords) {
-    toTopBtn.classList.add('btn-to-top--visible');
+    refs.toTop.classList.add('visible');
   }
   if (scrolled < coords) {
-    toTopBtn.classList.remove('btn-to-top--visible');
+    refs.toTop.classList.remove('visible');
   }
 }
 

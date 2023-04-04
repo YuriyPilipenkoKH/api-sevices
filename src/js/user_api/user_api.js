@@ -7,7 +7,7 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 // import { doc } from "prettier";
 import '../../css/user_api.css'
 import '../toIndex'
-import { onToTop } from "../scroll";
+import { onToTop, onScroll } from "../scroll";
 
 const lightbox = new SimpleLightbox('.gallery .user_img', {
   captionsData: 'alt',
@@ -30,7 +30,7 @@ export const refs = {
 refs.toTop.addEventListener('click', onToTop);
 
 
-
+onScroll()
 refs.form.addEventListener('submit', submitHandler)
 refs.del.addEventListener('click', deleteUser)
 
