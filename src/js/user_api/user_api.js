@@ -26,16 +26,25 @@ export const refs = {
     toTop : document.querySelector('.back-to-top'),
 }
 
-refs.del.disabled = true;
+// refs.del.disabled = true;
 refs.toTop.addEventListener('click', onToTop);
+
 
 
 refs.form.addEventListener('submit', submitHandler)
 refs.del.addEventListener('click', deleteUser)
 
+const usersStorage = []
+const storageKey = 'users'
+const usersData = localStorage.getItem(storageKey)
+
+if(usersData) {
+  const parse = JSON.parse(usersData) 
+  parse.map(user => renderUser(user))
+}
+
  function submitHandler(e) {
   e.preventDefault()
-
   usersRequest()
 
   .then(user => {
@@ -43,6 +52,9 @@ refs.del.addEventListener('click', deleteUser)
     renderUser(user)
     refs.del.disabled = false;
       lightbox.refresh();
+
+      usersStorage.push(user)
+      localStorage.setItem(storageKey, JSON.stringify(usersStorage))
 })
 
   .catch(error => {
@@ -53,7 +65,10 @@ refs.del.addEventListener('click', deleteUser)
 function deleteUser() {
   console.log('innerHTML = ');
   refs.gal.innerHTML = ''
+  localStorage.removeItem(storageKey)
 }
+
+
 
 
 
