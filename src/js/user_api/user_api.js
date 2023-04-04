@@ -8,12 +8,19 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 import '../../css/user_api.css'
 import '../toIndex'
 
-document.querySelector('.head').innerHTML = headerOfUserApi
+const lightbox = new SimpleLightbox('.gallery .user_img', {
+  captionsData: 'alt',
+  captionDelay: 250,
+ 
+});
+
+document.querySelector('#root').innerHTML = headerOfUserApi
 
 const refs = {
     head: document.querySelector('.head'),
     form: document.querySelector('#search-form'),
     sub: document.querySelector('.search-btn'),
+    del: document.querySelector('.delete-btn'),
 }
 
 console.log(refs.form);
@@ -38,8 +45,4 @@ refs.form.addEventListener('submit', submitHandler)
 })}
 
 
-const lightbox = new SimpleLightbox('.gallery .user_img', {
-    captionsData: 'alt',
-    captionDelay: 250,
-   
-  });
+
