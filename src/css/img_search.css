@@ -1,6 +1,3 @@
-body{
-  padding: 70px 16px 0;
-}
 
 .header {
     position: fixed;
@@ -9,7 +6,6 @@ body{
     z-index: 100;
     width: 100%;
     display: flex;
-    gap: 25px;
     justify-content: center;
     background-color: #281e72c5;
     padding: 15px;
@@ -17,7 +13,6 @@ body{
 
 .search-form {
     display: flex;
-    gap: 55px;
     margin: 0;
     padding: 0 16px;
     border-radius: 26px;
@@ -54,15 +49,13 @@ outline: none;
     font-weight: 500;
 }
 
-.search-btn ,
-.delete-btn {
+.search-btn {
     padding: 8px 16px 8px 8px;
     border-radius:  0 26px  26px 0;
     background-color: transparent;
     margin: 0;
     border: transparent;
     cursor: pointer;
-    color: #fff;
 
 }
 
@@ -76,12 +69,6 @@ outline: none;
 }
 .search-btn:focus .lens {
     fill: #ff0;
-}
-
-.search-btn:disabled,
-.delete-btn:disabled {
- color: #777;
- cursor: none;
 }
 
 
@@ -145,86 +132,3 @@ outline: none;
     outline: none;
     scale: 1.05;
   }
-
-  .back-to-top {
-    display: none;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-    border: none;
-    background-color: transparent;
-    padding: 8px;
-
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .back-to-top:hover {
-    background-color: #281e7235;
-    
-  }
-
-  .back-to-top:hover .fingerUp {
-    stroke: 2px;
-    stop-color: #ddd;
-   /* fill: #ddd; */
-  }
-
-  .back-to-top.visible {
-    display: block;
-  }
-
-  /* radio */
-
-  .radio {
-    font-family: Haettenschweiler,  sans-serif;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 600;
-    color: #eee;
-    text-transform: capitalize;
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    position: relative;
-    padding: 5px 30px 5px 30px;
-    cursor: pointer;
-    height: 20px;
-  }
-
-  .radio input[type="checkbox"] {
-    display: none;
-  
-  }
-
-  .radio span {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: 3px solid #eee;
-    display: block;
-    position: absolute; 
-    left: 0;
-    bottom:-2px ;
-
-  }
-
-  .radio span::after {
-    content: '';
-    height: 12px;
-    width: 12px;
-    border-radius: 505;
-    background: #00aeff;
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%) scale(0);
-    transition: 400ms ease-in-out 0s;
-  }
-
-  .radio input[type="checkbox"]:checked ~ span::after {
-    transform: translate(-50%,-50%) scale(1);
-    /* content: ''; */
-  }
-

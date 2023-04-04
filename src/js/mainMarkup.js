@@ -27,6 +27,12 @@ export const headerOfUserApi = `
            Delete </button>
 
      </form>
+
+     <label class="radio">
+     <input type="checkbox" value="scroll" name="scroll">
+     scroll
+     <span></span>
+ </label>
 </div>
 
 <div class="gallery"></div>

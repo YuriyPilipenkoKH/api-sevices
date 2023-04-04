@@ -7,7 +7,7 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 // import { doc } from "prettier";
 import '../../css/user_api.css'
 import '../toIndex'
-import { onToTop, onScroll } from "../scroll";
+import { onToTop, onScroll, toggleRadio } from "../scroll";
 
 const lightbox = new SimpleLightbox('.gallery .user_img', {
   captionsData: 'alt',
@@ -24,13 +24,18 @@ export const refs = {
     del: document.querySelector('.delete-btn'),
     gal : document.querySelector('.gallery'),
     toTop : document.querySelector('.back-to-top'),
+    radio : document.querySelector('.radio'),
+    box : document.querySelector('[type="checkbox"]'),
+
 }
 
+console.log(refs.box.checked);
 // refs.del.disabled = true;
 refs.toTop.addEventListener('click', onToTop);
-
-
+refs.radio.addEventListener('click', toggleRadio);
 onScroll()
+
+
 refs.form.addEventListener('submit', submitHandler)
 refs.del.addEventListener('click', deleteUser)
 
