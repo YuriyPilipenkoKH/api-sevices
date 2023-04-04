@@ -1,14 +1,24 @@
 import usersRequest from "./request";
 import renderUser from './renderUser'
+import {headerOfUserApi} from '../mainMarkup'
 import { Notify } from "notiflix";
 import simpleLightbox from "simplelightbox";
-import { doc } from "prettier";
+import "simplelightbox/dist/simple-lightbox.min.css"
+// import { doc } from "prettier";
 import '../../css/user_api.css'
 import '../toIndex'
 
+document.querySelector('.head').innerHTML = headerOfUserApi
+
 const refs = {
-    form: document.querySelector('.search-form')
+    head: document.querySelector('.head'),
+    form: document.querySelector('#search-form'),
+    sub: document.querySelector('.search-btn'),
 }
+
+console.log(refs.form);
+
+
 refs.form.addEventListener('submit', submitHandler)
 
  function submitHandler(e) {
@@ -17,10 +27,9 @@ refs.form.addEventListener('submit', submitHandler)
   usersRequest()
 
   .then(user => {
-    console.log(user)
 
     renderUser(user)
-
+      lightbox.refresh();
 })
 
   .catch(error => {
@@ -28,3 +37,9 @@ refs.form.addEventListener('submit', submitHandler)
     Notify.failure(error.message)
 })}
 
+
+const lightbox = new SimpleLightbox('.gallery .user_img', {
+    captionsData: 'alt',
+    captionDelay: 250,
+   
+  });

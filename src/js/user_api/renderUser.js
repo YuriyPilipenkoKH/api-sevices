@@ -11,7 +11,7 @@ export default function renderUser(user) {
 
     const markup = `
     <div>
-      <a href="${large}">
+      <a class="user_img" href="${large}">
         <img src="${medium}" alt="user ${last}">
       </a>
       <p>${last} ${first}</p>

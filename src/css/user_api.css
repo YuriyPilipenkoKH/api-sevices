@@ -16,6 +16,7 @@ body{
 
 .search-form {
     display: flex;
+    gap: 55px;
     margin: 0;
     padding: 0 16px;
     border-radius: 26px;
@@ -52,13 +53,15 @@ outline: none;
     font-weight: 500;
 }
 
-.search-btn {
+.search-btn ,
+.delete-btn {
     padding: 8px 16px 8px 8px;
     border-radius:  0 26px  26px 0;
     background-color: transparent;
     margin: 0;
     border: transparent;
     cursor: pointer;
+    color: #fff;
 
 }
 
