@@ -6,6 +6,7 @@ import { headerOfClassSearch } from '../mainMarkup'
 import { fetchCard } from "./img_fetch";
 import { renderGallery } from "./img_render";
 import { onToTop, onScroll } from "../scroll";
+import { perPageSelect } from "../mainMarkup";
 import '../../css/img_search.css'
 import '../toIndex'
 import '../../index'
@@ -18,6 +19,7 @@ const lightbox = new SimpleLightbox('.gallery .gallery__link', {
 
 document.querySelector('#root').innerHTML = headerOfClassSearch
 
+
  const refs = {
     head: document.querySelector('.header'),
     form: document.querySelector('#search-form'),
@@ -28,7 +30,16 @@ document.querySelector('#root').innerHTML = headerOfClassSearch
     toTop : document.querySelector('.back-to-top'),
 }
 
-// refs.toTop.classList.add('is-hidden')
+refs.head.insertAdjacentHTML('beforeend', perPageSelect)
+const selectedPage =  document.querySelector("#sel")
+selectedPage.addEventListener('change', getSelectValue)
+
+let perPage = selectedPage.value;
+
+function getSelectValue () {
+    perPage = selectedPage.value;
+}
+
 
 refs.form.addEventListener('submit', onSearch)
 refs.loadMore.addEventListener('click', onLoadMore)
@@ -37,7 +48,7 @@ refs.toTop.addEventListener('click', onToTop)
 
 let query = refs.input.value
 let page = 1 
-const perPage = 40
+
 
 onScroll()
 
@@ -46,7 +57,7 @@ function onSearch(e) {
     query = refs.input.value.trim()
     refs.sub.disabled = true
     refs.gal.innerHTML = '';
-
+    
 
     if (query === '') {
         Notify.failure('The search string cannot be empty. Please specify your search query.');
@@ -57,12 +68,11 @@ function onSearch(e) {
         return;
     } else {
 
-        console.log(refs.input.value);
+        
         fetchCard(query,page,perPage)
         .then(( data) => {
             const {hits, totalHits, total } = data
-            console.log('hits', hits, 'totalHits', totalHits, 'total',total) ;
-    
+           
             if (totalHits === 0) {
                 Notify.failure(
                     'Sorry, there are no images matching your search query. Please try again.'
@@ -70,7 +80,7 @@ function onSearch(e) {
             return
         }
     
-            renderGallery(data.hits);
+            renderGallery(data.hits,page,perPage);
             lightbox.refresh();
     
             Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
@@ -88,16 +98,35 @@ function onSearch(e) {
     }
 }
 
-console.log('page',page);
+
+
 function onLoadMore(e) {
     e.preventDefault()
     page += 1;
-   
+    
+  
+    fetchCard(query,page,perPage)
+    .then(( data) => {
+        const {hits, totalHits, total } = data
+     
+        const totalPages = Math.ceil(totalHits / perPage);
 
+        console.log('totalPages',totalPages);
+        // console.log('page',page, 'perPage',perPage);
+
+        renderGallery(hits,page,perPage);
+        lightbox.refresh();
+        if (page >= totalPages) {
+            refs.loadMore.classList.remove('visible')
+            Notify.failure("We're sorry, but you've reached the end of search results.");
+          }
+
+    })
 }
 
 function onInputChange() {
     refs.sub.disabled = false
     refs.loadMore.classList.remove('visible')
+
 }
 
