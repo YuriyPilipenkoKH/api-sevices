@@ -4,10 +4,12 @@ import simpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css"
 import { headerOfClassSearch } from '../mainMarkup'
 import { fetchCard } from "./img_fetch";
+import { renderGallery } from "./img_render";
+import { onScroll } from "../scroll";
 import '../../css/img_search.css'
 import '../toIndex'
 
-const lightbox = new SimpleLightbox('.gallery .user_img', {
+const lightbox = new SimpleLightbox('.gallery', {
     captionsData: 'alt',
     captionDelay: 250,
    
@@ -15,7 +17,7 @@ const lightbox = new SimpleLightbox('.gallery .user_img', {
 
 document.querySelector('#root').innerHTML = headerOfClassSearch
 
-export const refs = {
+ const refs = {
     head: document.querySelector('.header'),
     form: document.querySelector('#search-form'),
     input: document.querySelector('.field'),
@@ -25,6 +27,9 @@ export const refs = {
     toTop : document.querySelector('.back-to-top'),
 }
 
+// refs.loadMore.classList.add('is-hidden')
+refs.toTop.classList.add('is-hidden')
+
 refs.form.addEventListener('submit', onSearch)
 refs.loadMore.addEventListener('click', onLoadMore)
 refs.input.addEventListener('input', onInputChange)
@@ -33,12 +38,13 @@ let query = refs.input.value
 const page = 1 
 const perPage = 40
 
+onscroll()
+
 function onSearch(e) {
     e.preventDefault()
     query = refs.input.value.trim()
     refs.sub.disabled = true
     refs.gal.innerHTML = '';
-    refs.loadMore.classList.add('is-hidden');
 
 
     if (query === '') {
@@ -59,7 +65,13 @@ function onSearch(e) {
         if (totalHits === 0) {
             Notify.failure(
                 'Sorry, there are no images matching your search query. Please try again.',
-              )}
+        )}
+
+        renderGallery(data.hits);
+        lightbox.refresh();
+        Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
+        refs.sub.disabled = true;
+        refs.loadMore.classList.add('visible')
     })
 }
 

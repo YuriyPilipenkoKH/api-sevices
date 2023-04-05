@@ -1,3 +1,9 @@
+#root {
+display: flex;
+gap: 8px;
+flex-direction: column;
+align-items: center;
+}
 
 .header {
     position: fixed;
@@ -101,22 +107,45 @@ outline: none;
   
  
   
-  .load-more.is-hidden {
-    display: none;
+  .load-more.visible {
+    display: flex;
   }
   
   .load-more {
-   display: inline-flex;
-    margin-left: auto;
-    margin-right: auto;
+    position: fixed;
+    bottom: 10px;
+    display: none;
+    gap: 12px;
+    align-items: center;
     padding: 12px 26px ;
-    border-radius:  26px  ;
-    background-color: #281e72c5;
-    font-size: 16px;
+    border-radius:  36px  ;
+    background-color: transparent;
+    font-size: 22px;
     font-weight: 500;
-    color: #fff;
-    border: transparent;
+    color: #222;
+    border: 3px solid #777;
+    transition: 0.4s ease;
+    z-index: 10;
     cursor: pointer;
+  }
+
+  .iconLoader {
+    fill: #222;
+    transition: 0.4s ease;
+  }
+
+  .load-more:hover,
+  .load-more:focus {
+    outline: none;
+    background-color: #281e72c5;
+    border:3px solid transparent;
+    color: #eee;
+
+  }
+
+  .load-more:hover .iconLoader,
+  .load-more:focus .iconLoader {
+    fill: #eee;
   }
   
   .gallery-item {
@@ -131,4 +160,31 @@ outline: none;
   .gallery-item:focus {
     outline: none;
     scale: 1.05;
+  }
+
+  .back-to-top.is-hidden {
+    display: none;
+  }
+
+  .back-to-top {
+    
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    padding: 8px;
+    z-index: 1000;
+    border-radius: 50%;
+    border: transparent;
+    background: transparent;
+    transition: 0.4s ease;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+
+  }
+
+  .back-to-top:hover, 
+  .back-to-top:hover {
+    outline: none;
+    background-color: #281e7225;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   }

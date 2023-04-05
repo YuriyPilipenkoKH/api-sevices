@@ -1,19 +1,20 @@
 
-import { refs } from "./user_api/user_api";
+
 export { onScroll, onToTop, onToDown, toggleRadio };
 
 
 window.addEventListener('scroll', onScroll);
 
 function onScroll() {
+  const toTop = document.querySelector('.back-to-top')
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
 
   if (scrolled > coords) {
-    refs.toTop.classList.add('visible');
+    toTop.classList.add('visible');
   }
   if (scrolled < coords) {
-    refs.toTop.classList.remove('visible');
+    toTop.classList.remove('visible');
   }
 }
 

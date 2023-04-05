@@ -20,5 +20,5 @@ export default function renderUser(user) {
     </div>
     `
 
-  return  gal.insertAdjacentHTML('beforeend', markup)
+ return   gal.insertAdjacentHTML('beforeend', markup)
 }
