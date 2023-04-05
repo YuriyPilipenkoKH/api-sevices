@@ -7,7 +7,8 @@ import "simplelightbox/dist/simple-lightbox.min.css"
 // import { doc } from "prettier";
 import '../../css/user_api.css'
 import '../toIndex'
-import { onToTop, onScroll, toggleRadio } from "../scroll";
+import { onToTop, onScroll } from "../scroll";
+import { toggleRadio } from "./toggleRadio";
 
 const lightbox = new SimpleLightbox('.gallery .user_img', {
   captionsData: 'alt',

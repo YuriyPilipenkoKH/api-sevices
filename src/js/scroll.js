@@ -1,6 +1,6 @@
 
 
-export { onScroll, onToTop, onToDown, toggleRadio };
+export { onScroll, onToTop, onToDown  };
 
 
 window.addEventListener('scroll', onScroll);
@@ -24,11 +24,3 @@ function onToTop() {
   }
 }
 
-function toggleRadio(e) {
-//  console.log(e.target);
- if(refs.box.checked) {
-    refs.box.checked = false
-   
- }
-    refs.box.checked = true
-}
