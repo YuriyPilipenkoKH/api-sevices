@@ -8,8 +8,9 @@ import { renderGallery } from "./img_render";
 import { onScroll } from "../scroll";
 import '../../css/img_search.css'
 import '../toIndex'
+import '../../index'
 
-const lightbox = new SimpleLightbox('.gallery', {
+const lightbox = new SimpleLightbox('.gallery .gallery__link', {
     captionsData: 'alt',
     captionDelay: 250,
    
@@ -38,7 +39,7 @@ let query = refs.input.value
 const page = 1 
 const perPage = 40
 
-onscroll()
+// onscroll()
 
 function onSearch(e) {
     e.preventDefault()
@@ -69,6 +70,8 @@ function onSearch(e) {
 
         renderGallery(data.hits);
         lightbox.refresh();
+
+
         Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
         refs.sub.disabled = true;
         refs.loadMore.classList.add('visible')
