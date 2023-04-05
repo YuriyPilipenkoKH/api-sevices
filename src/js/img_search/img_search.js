@@ -42,11 +42,11 @@ function onSearch(e) {
 
 
     if (query === '') {
-        Notiflix.Notify.failure('The search string cannot be empty. Please specify your search query.');
+        Notify.failure('The search string cannot be empty. Please specify your search query.');
         return;
-      }
+    }
     if ( query.length === 1) {
-        Notiflix.Notify.failure('The  query is too short. Please specify your search query.');
+        Notify.failure('The  query is too short. Please specify your search query.');
         return;
     }
 
@@ -57,7 +57,7 @@ function onSearch(e) {
         console.log('hits', hits, 'totalHits', totalHits, 'total',total) ;
 
         if (totalHits === 0) {
-            Notiflix.Notify.failure(
+            Notify.failure(
                 'Sorry, there are no images matching your search query. Please try again.',
               )}
     })
