@@ -1,5 +1,5 @@
-import { foxNick } from "./js/mainMarkup";
+import { foxNick,lens,testsvg } from "./js/mainMarkup";
 
-//  document.querySelector('body').insertAdjacentHTML('beforeend', foxNick)
+ document.querySelector('body').insertAdjacentHTML('beforeend', testsvg)
 
-
+//testsvg
