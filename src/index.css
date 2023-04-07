@@ -6,6 +6,7 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #B92F2C;
 
     display: grid;
     place-items: center;
