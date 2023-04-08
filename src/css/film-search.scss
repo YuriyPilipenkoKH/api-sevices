@@ -182,19 +182,15 @@ img {
     }
   }  
 
-  .header__btn-wrapper {
-  display: flex;
-  gap: 4px;
-  }
+
   
   .header__btn-home {
-    display: flex;
-    justify-content: center;
+  
     padding: 10px 26px;
     width: 87px;
     height: 34px;
-    border-radius: 100px;
     border: transparent;
+    border-radius: 17px;
   
     font-weight: 500;
     font-size: 12px;
@@ -202,29 +198,24 @@ img {
     text-transform: uppercase;
     color: #000000;
     background: #ffffff;
+    cursor: pointer;
   }
   
   .header__btn-library {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: transparent;
     width: 113px;
     height: 34px;
-  
-    border-radius: 100px;
+    border: transparent;
+    border-radius: 17px;
   
     font-weight: 500;
     font-size: 12px;
     line-height: calc(12 / 14);
     text-transform: uppercase;
-    color: #ffffff;
-    background: #000000;
+    color: #000000;
+    background: #ffffff;
+    cursor: pointer;
   }
   
-  .header__btn-wrapper {
-    display: flex;
-  }
   .header__form {
     width: 252px;
     height: 34px;
@@ -238,14 +229,12 @@ img {
   .header__form-input {
    
     height: 34px;
+    width: 252px;
     padding-left: 14px;
-    padding-right: 0;
-    border: 0;
-    outline: transparent;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-  
+    border: none;
     color: #000000;
+    background-color: transparent;
+
   }
   .header__form-btn {
     width: 30px;
@@ -268,10 +257,7 @@ img {
   
     color: #000000;
   }
-  .header__form-btn {
-    border-left: 0;
-    border-color: inherit;
-  }
+
   .header__form-svg {
     display: inline-block;
     width: 1em;
@@ -286,7 +272,7 @@ img {
     padding: 10px 23px;
     width: 102px;
     height: 34px;
-    border-radius: 100px;
+    border-radius: 17px;
     border: transparent;
     font-weight: 500;
     font-size: 12px;
@@ -294,12 +280,14 @@ img {
     text-transform: uppercase;
     color: #b92f2c;
     background: #ffffff;
+    cursor: pointer;
+
   }
   .header__btn-queue {
     padding: 10px 24px;
     width: 86px;
     height: 34px;
-    border-radius: 100px;
+    border-radius: 17px;
     border: transparent;
     font-weight: 500;
     font-size: 12px;
@@ -324,26 +312,7 @@ img {
     fill: transparent;
   }
 
-  .header__wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 
-  @media screen and (min-width: 768px) {
-    flex-direction: row-reverse;
-    justify-content: start;
-  }
-
-  }
-  
-
-  
-  .header__btn-bottom {
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-
-  }
   .header__title {
     font-weight: 500;
     font-size: 32px;
@@ -352,6 +321,9 @@ img {
     color: #ffffff;
   }
 
+
+
+  
 /* //--------------------------------- */
 
   .header__user-wrapper {
