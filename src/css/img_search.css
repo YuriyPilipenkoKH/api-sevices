@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 
-.header {
+.header1 {
     display: flex;
     gap: 8px;
     position: fixed;

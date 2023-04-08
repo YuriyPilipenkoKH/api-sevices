@@ -6,11 +6,13 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #B92F2C;
+    /* background: #B92F2C; */
 
     display: grid;
     place-items: center;
   }
+
+  
   
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

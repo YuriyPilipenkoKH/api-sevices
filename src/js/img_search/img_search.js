@@ -10,6 +10,7 @@ import { perPageSelect } from "../mainMarkup";
 import '../../css/img_search.css'
 import '../toIndex'
 import '../../index'
+import  '../user_api/iconUser'
 
 const lightbox = new SimpleLightbox('.gallery .gallery__link', {
     captionsData: 'alt',
