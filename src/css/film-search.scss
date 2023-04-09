@@ -75,16 +75,29 @@ img {
   .header__background {
    padding: 14px 14px 20px 14px;
    height: 460px;
-
+  width: 280px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-  
+    margin: 0;
    
     border-radius: 10px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit,20%);
+  grid-template-rows: repeat(auto-fit, 25%);
+  // grid-row-gap: 4px;
+  grid-template-areas: 
+  'hom hom . lib lib' 
+  'for for for for for' 
+  'log log log log log'
+  'wch wch . qwe qwe';
+
+  justify-items: stretch;
+  justify-content: start;
 
     @media screen and (min-width: 768px) {
       padding: 16px;
@@ -118,10 +131,7 @@ img {
         url(../img/film/background-mobile@3x.jpg);
     }
   
- 
-  
     @media screen and (min-width: 768px) {
-      // width: 768px;
   
       background-image: linear-gradient(
           to right,
@@ -183,9 +193,11 @@ img {
   }  
 
 
+
+
   
   .header__btn-home {
-  
+    grid-area: hom;
     padding: 10px 26px;
     width: 87px;
     height: 34px;
@@ -202,6 +214,7 @@ img {
   }
   
   .header__btn-library {
+    grid-area: lib;
     width: 113px;
     height: 34px;
     border: transparent;
@@ -217,6 +230,7 @@ img {
   }
   
   .header__form {
+    grid-area: for;
     width: 252px;
     height: 34px;
 
@@ -269,6 +283,11 @@ img {
   }
   
   .header__btn-watched {
+
+    grid-area: wch;
+    justify-self: center;
+    align-self: end;
+   justify-content: end;
     padding: 10px 23px;
     width: 102px;
     height: 34px;
@@ -284,6 +303,9 @@ img {
 
   }
   .header__btn-queue {
+    grid-area: qwe;
+    justify-self: center;
+    align-self: end;
     padding: 10px 24px;
     width: 86px;
     height: 34px;
@@ -298,8 +320,14 @@ img {
   }
   
   .header__logo-link {
+
+    grid-area: log;
+    justify-self: center;
+    align-self: end;
     display: flex;
     align-items: center;
+    margin: 0;
+
   }
   .header__film-svg {
     display: inline-block;
@@ -323,7 +351,7 @@ img {
 
 
 
-  
+
 /* //--------------------------------- */
 
   .header__user-wrapper {
