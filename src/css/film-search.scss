@@ -42,6 +42,8 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
 .container {
  
     padding-left: 20px;
@@ -72,13 +74,32 @@ img {
 
   }
 
+  .header__wrapper-top  {
+   display: flex;
+   flex-wrap: wrap;
+    gap: 4px;
+    height: 40px;
+  }
+
+  .header__wrapper-bottom {
+    display: flex;
+    gap: 4px;
+    justify-self: center;
+    order: 4;
+    height: 40px;
+    align-self: flex-end;
+    align-items: center;
+    margin: 0 auto;
+
+  }
+
   .header__background {
    padding: 14px 14px 20px 14px;
    height: 460px;
-  width: 280px;
+   width: 280px;
    display: flex;
-   flex-direction: column;
-   justify-content: space-between;
+    flex-wrap: wrap;
+ 
     margin: 0;
    
     border-radius: 10px;
@@ -86,18 +107,18 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fit,20%);
-  grid-template-rows: repeat(auto-fit, 25%);
-  // grid-row-gap: 4px;
-  grid-template-areas: 
-  'hom hom . lib lib' 
-  'for for for for for' 
-  'log log log log log'
-  'wch wch . qwe qwe';
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit,20%);
+  // grid-template-rows: repeat(auto-fit, 25%);
+  // // grid-row-gap: 4px;
+  // grid-template-areas: 
+  // 'hom hom . lib lib' 
+  // 'for for for for for' 
+  // 'log log log log log'
+  // 'wch wch . qwe qwe';
 
-  justify-items: stretch;
-  justify-content: start;
+  // justify-items: stretch;
+  // justify-content: start;
 
     @media screen and (min-width: 768px) {
       padding: 16px;
@@ -197,7 +218,7 @@ img {
 
   
   .header__btn-home {
-    grid-area: hom;
+    // grid-area: hom;
     padding: 10px 26px;
     width: 87px;
     height: 34px;
@@ -214,7 +235,7 @@ img {
   }
   
   .header__btn-library {
-    grid-area: lib;
+    // grid-area: lib;
     width: 113px;
     height: 34px;
     border: transparent;
@@ -230,7 +251,7 @@ img {
   }
   
   .header__form {
-    grid-area: for;
+    // grid-area: for;
     width: 252px;
     height: 34px;
 
@@ -238,6 +259,7 @@ img {
     display: flex;
     justify-content: space-between;
     background-color: #fff;
+   justify-self: flex-end;
   }
   
   .header__form-input {
@@ -284,7 +306,7 @@ img {
   
   .header__btn-watched {
 
-    grid-area: wch;
+    // grid-area: wch;
     justify-self: center;
     align-self: end;
    justify-content: end;
@@ -303,7 +325,7 @@ img {
 
   }
   .header__btn-queue {
-    grid-area: qwe;
+    // grid-area: qwe;
     justify-self: center;
     align-self: end;
     padding: 10px 24px;
@@ -321,12 +343,12 @@ img {
   
   .header__logo-link {
 
-    grid-area: log;
-    justify-self: center;
-    align-self: end;
+    // grid-area: log;
+    // justify-self: center;
+    align-self: flex-end;
     display: flex;
     align-items: center;
-    margin: 0;
+    margin: 0 auto;
 
   }
   .header__film-svg {
