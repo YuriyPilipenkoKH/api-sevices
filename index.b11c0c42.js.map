@@ -1,0 +1,1 @@
+{"mappings":"oeAAAA,EAAA","sources":["src/index.js"],"sourcesContent":["import { foxNick,lens,testsvg, iconUser, iconUser2, iconUser3 } from \"./js/mainMarkup\";\n\n//  document.querySelector('body').insertAdjacentHTML('beforeend', iconUser)\n\n//testsvg\n"],"names":["parcelRequire"],"version":3,"file":"index.b11c0c42.js.map"}
