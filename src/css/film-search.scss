@@ -104,10 +104,16 @@ img {
      }
 
   }
+  
+  .header__wrapper-bottom  {
+    display: flex;
+    gap: 8px;
+  }
 
 .header__btn-home {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px 26px;
   width: 87px;
   height: 34px;
@@ -336,11 +342,6 @@ img {
 }
 
 
-  
-
-  
-
-  
   .header__form {
     // grid-area: for;
     width: 252px;
@@ -359,7 +360,7 @@ img {
       width: 165px;
       height: 38px;
       border-radius: 19px;
-
+      order: -1;
    }
 
    
@@ -380,7 +381,7 @@ img {
 
      @media screen and (min-width: 768px) {
     width: 110px;
-
+  
     }
 
   }
@@ -428,6 +429,21 @@ img {
     flex-direction: column;
     align-items: center;
     gap: 16px;
+
+    @media screen and (min-width: 768px) {
+      align-items: start;
+  
+      }
+
+  }
+
+  .header__root-desktop {
+
+    
+    @media screen and (min-width: 768px) {
+      margin-left: auto;
+      }
+
   }
   
   .header__btn-watched {
@@ -448,6 +464,18 @@ img {
     background: #ffffff;
     cursor: pointer;
 
+    @media screen and (min-width: 768px) {
+      height: 38px;
+      width: 102px;
+      border-radius: 19px;
+    }
+    @media screen and (min-width: 1280px) {
+    height: 42px;
+    width: 120px;
+      border-radius: 21px;
+    }
+
+
   }
   .header__btn-queue {
     // grid-area: qwe;
@@ -461,15 +489,30 @@ img {
     font-size: 12px;
     line-height: calc(12 / 14);
     text-transform: uppercase;
-    color: #ffffff;
-    background: #b92f2c;
+    color: #b92f2c;
+    background: #ffffff;
+
+    @media screen and (min-width: 768px) {
+    width: 86px;
+    height: 38px;
+    border-radius: 19px;
+  
+    }
+    @media screen and (min-width: 1280px) {
+    width: 86px;
+    height: 42px;
+    border-radius: 21px;
+    }
+
   }
   
   .header__logo-link {
  
    display: flex;
    align-items: center;
-
+   flex-grow: 1;
+   align-items: end;
+   order: 0;
    margin: 0 auto;
 
    @media screen and (min-width: 768px) {
