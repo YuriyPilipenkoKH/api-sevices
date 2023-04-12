@@ -88,7 +88,7 @@ img {
   //  }
   // }
 
-  .header__wrapper  {
+  .header__btn-wrapper  {
   //  display: grid;
   //  grid-auto-flow: row;
   //  grid-template-columns: repeat(auto-fit, minmax(188px, 1fr));
@@ -99,6 +99,9 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap:4px;
+    @media screen and (min-width: 768px) {
+     gap: 8px;
+     }
 
   }
 
@@ -108,7 +111,7 @@ img {
   padding: 10px 26px;
   width: 87px;
   height: 34px;
-  border-radius: 100px;
+  border-radius: 17px;
 
   font-weight: 500;
   font-size: 12px;
@@ -123,13 +126,13 @@ img {
     padding: 10px 20px;
     width: 83px;
     height: 38px;
-   
+    border-radius: 19px;
   }
   @media screen and (min-width: 1280px) {
     padding: 14px 30px;
     width: 99px;
     height: 42px;
-  
+    border-radius: 21px;
   }
 }
 
@@ -140,7 +143,7 @@ img {
   align-items: center;
   min-width: 113px;
   height: 34px;
-  border-radius: 100px;
+  border-radius: 17px;
 
   font-weight: 500;
   font-size: 12px;
@@ -154,24 +157,23 @@ img {
     padding: 10px 20px;
     width: 109px;
     height: 38px;
-    
+    border-radius: 19px;
   }
   @media screen and (min-width: 1280px) {
     padding: 14px 24px;
- 
     width: 117px;
     height: 42px;
-  
+    border-radius: 21px;
   }
 }
 
 
 
-// .header__btn-home.current,
-// .header__btn-library.current {
-//   color: #ffffff;
-//   background: #000000;
-// }
+.header__btn-home.current,
+.header__btn-library.current {
+  color: #ffffff;
+  background: #000000;
+}
 
 
 
@@ -335,38 +337,9 @@ img {
 
 
   
-  .header__btn-home {
-    // grid-area: hom;
-    padding: 10px 26px;
-    width: 87px;
-    height: 34px;
-    border: transparent;
-    border-radius: 17px;
+
   
-    font-weight: 500;
-    font-size: 12px;
-    line-height: calc(12 / 14);
-    text-transform: uppercase;
-    color: #000000;
-    background: #ffffff;
-    cursor: pointer;
-  }
-  
-  .header__btn-library {
-    // grid-area: lib;
-    width: 113px;
-    height: 34px;
-    border: transparent;
-    border-radius: 17px;
-  
-    font-weight: 500;
-    font-size: 12px;
-    line-height: calc(12 / 14);
-    text-transform: uppercase;
-    color: #000000;
-    background: #ffffff;
-    cursor: pointer;
-  }
+
   
   .header__form {
     // grid-area: for;
