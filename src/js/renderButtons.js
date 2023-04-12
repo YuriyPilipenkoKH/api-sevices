@@ -1,4 +1,5 @@
 import './addNotifier'
+import throttle from 'lodash.throttle'
 export { rootMobile,twoSmokingButtons }
 
 const rootMobile = document.querySelector('.header__root-mobile')
@@ -17,34 +18,36 @@ const twoSmokingButtons = `
            
 
 
-// if (window.matchMedia('(min-width: 768px)').matches) {
-//   rootDesktop.innerHTML = twoSmokingButtons
+if (window.matchMedia('(min-width: 768px)').matches) {
+  rootDesktop.innerHTML = twoSmokingButtons
   
-//   console.log('768');
-// }  
-// else {
-//   rootDesktop.innerHTML = ``
-//   rootMobile.innerHTML = twoSmokingButtons
-//   console.log('mobile');
-// }
+  console.log('768');
+}  
+else {
+  rootDesktop.innerHTML = ``
+  rootMobile.innerHTML = twoSmokingButtons
+  console.log('mobile');
+}
 
 export function renderTwoButtons () {
 
 }
 
-visualViewport.addEventListener("resize", (e) => {
-//  console.log(e.currentTarget.width);
-let viewportWidth = e.currentTarget.width
-
- if(viewportWidth < 768) {
-  rootDesktop.innerHTML = ''
-  rootMobile.innerHTML = twoSmokingButtons
-  console.log('mobile')
- } 
- else {
-  rootDesktop.innerHTML = twoSmokingButtons
-  rootMobile.innerHTML = ''
-  console.log('768');
- }
-});
+// visualViewport.addEventListener("resize", throttle( 
+//   (e) => {
+//     //  console.log(e.currentTarget.width);
+//     let viewportWidth = e.currentTarget.width
+    
+//      if(viewportWidth < 768) {
+//       rootDesktop.innerHTML = ''
+//       rootMobile.innerHTML = twoSmokingButtons
+//       console.log('mobile')
+//      } 
+//      else {
+//       rootDesktop.innerHTML = twoSmokingButtons
+//       rootMobile.innerHTML = ''
+//       console.log('768');
+//      }
+//     })
+//    ,400) ;//_.throttle(  ,2000)
 
