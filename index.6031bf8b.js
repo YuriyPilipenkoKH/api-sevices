@@ -1,2 +1,0 @@
-const e=document.querySelector(".header__root-mobile");document.querySelector(".header__root-desktop");console.log("rootMobile");window.matchMedia("(min-width: 768px)").matches&&e.insertAdjacentHTML("beforeend",'\n<div class="header__wrapper-bottom">\n                  <button class="header__btn-watched btn" type="button">\n                      WATCHED\n                    </button>\n                    <button class="header__btn-queue btn" type="button">QUEUE</button>\n                </div>');
-//# sourceMappingURL=index.6031bf8b.js.map
