@@ -568,6 +568,10 @@ img {
   
       /* =============animation=================== */
 
+.button {
+  position: relative;
+}      
+
 .btn-container {
   display: block;
   position: absolute;
@@ -578,7 +582,7 @@ img {
   width: 100%;
   height: 100%;
   overflow: hidden;
- /* border-radius: 10px; */
+ border-radius: 20px; 
 
 }
 
@@ -593,7 +597,7 @@ img {
   transform: translate(-50%, -50%);
 
   z-index: 2;
-  animation: scaleUp 1s  forwards;
+  animation: scaleUp 2s  forwards;
 }
 
 @keyframes scaleUp {
