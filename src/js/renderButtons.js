@@ -9,10 +9,10 @@ console.log(rootMobile);
 
 const twoSmokingButtons = `
 <div class="header__wrapper-bottom">
-                  <button class="header__btn-watched btn" type="button">
+                  <button class="header__btn-watched button" type="button">
                       WATCHED
                     </button>
-                    <button class="header__btn-queue btn" type="button">QUEUE</button>
+                    <button class="header__btn-queue button" type="button">QUEUE</button>
                 </div>`
 
            
