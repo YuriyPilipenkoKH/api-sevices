@@ -7,12 +7,15 @@ const refs = {
 
 export const btns = {
 
-    all: document.querySelectorAll('.button'),
     home: document.querySelector('.header__btn-home'),
     library: document.querySelector('.header__btn-library'),
     watched: document.querySelector('.header__btn-watched'),
     queue: document.querySelector('.header__btn-queue'),
+    mod: document.querySelector('.modal__btn'),
+
 }
+
+console.log(btns.all);
 
 const btnContainer = `
 <span class="btn-container"></span>
