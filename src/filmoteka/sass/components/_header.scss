@@ -160,7 +160,9 @@ grid-template-areas:
     color: var(--secondary-text-color);
     background: var(--primary-text-color);
 
-    transition: background-color,color 0.4s ease;
+    transition-property: background-color, color ; 
+    transition-duration: 0.4s ; 
+    transition-timing-function: ease-in ; 
    
 
      @media screen and (min-width: 768px) {
@@ -254,7 +256,7 @@ grid-template-areas:
 
     width: 34px;
     height: 34px;
-    background-color: antiquewhite;
+    background-color: var(--primary-text-color);
     border-radius: 50%;
     cursor: pointer;
     transition:  0.4s ease;
@@ -340,7 +342,7 @@ grid-template-areas:
   cursor: pointer;
   background-color: var(--primary-text-color);
   border: transparent;
-
+  outline: none;  
   justify-content: center;
   align-items: center;
   display: flex;
@@ -371,6 +373,7 @@ grid-template-areas:
   align-items: center;
   cursor: pointer;
   height: 32px;
+   outline: none;  
 
     @media screen and (min-width: 768px) {
     height: 40px;    
