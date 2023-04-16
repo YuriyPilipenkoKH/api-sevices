@@ -1,0 +1,13 @@
+// @font-face {
+//   font-family: 'Roboto';
+//   src: url('../fonts/Roboto-Medium.ttf') format('truetype'),
+//     url('../fonts/Roboto-Regular.ttf') format('truetype'),
+//     url('../fonts/Roboto-Medium.woff2') format('woff'),
+//     url('../fonts/Roboto-Regular.woff2') format('woff');
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Roboto:wght@400;500&display=swap');
+
+body {
+  font-family: Roboto, sans-serif;
+}

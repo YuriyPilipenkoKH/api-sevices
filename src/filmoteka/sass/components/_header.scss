@@ -8,9 +8,6 @@
 
 .header__background {
   padding: 14px 14px 20px 14px;
-//   display: flex;
-//   justify-content: space-between;
-//   flex-direction: column;
   width: 280px;
   height: 460px;
   border-radius: 10px;
@@ -115,6 +112,10 @@
   }
 }
 
+.home__grid-container {
+
+}
+
 .btn {
     display: flex;
     align-items: center;
@@ -122,6 +123,7 @@
     padding: 10px 20px;
     height: 34px;
     border-radius: 17px;
+    font-family: inherit;
     font-weight: 500;
     font-size: 12px;
     line-height: calc(12 / 14);
@@ -131,6 +133,9 @@
     cursor: pointer;     
     color: var(--secondary-text-color);
     background: var(--primary-text-color);
+
+    transition: background-color,color 0.4s ease;
+   
 
      @media screen and (min-width: 768px) {
      height: 38px;
@@ -142,29 +147,99 @@
      }
 }
 
+.btn:hover,
+.btn:focus {
+    outline: none;
+    background-color: var(--backdrop-color);
+    color: var(--primary-text-color);
+}
+
+.header__btn-home {
+    width: 87px;
+
+      @media screen and (min-width: 768px) {
+     width: 83px;
+     }
+     @media screen and (min-width: 1280px) {
+     width: 99px;
+     }
+}
+
+.header__btn-library {
+  width: 113px;
+
+    @media screen and (min-width: 768px) {
+     width: 113px;
+     }
+     @media screen and (min-width: 1280px) {
+     width: 117px;
+     }
+}
+
 .header__btn-home.current, 
 .header__btn-library.current {
     color: var(--primary-text-color);
     background: var(--secondary-text-color);
 }
-
-
 .header__btn-wrapper-top,
 .header__btn-wrapper-bottom {
     display: flex;
     gap: 4px;
+    height: 34px;
+
+    @media screen and (min-width: 768px) {
+     height: 38px;
+     }
+     @media screen and (min-width: 1280px) {
+     height: 42px;
+     }
+
+}
+
+
+.header__btn-wrapper-top {
+    grid-area: top;
+    
+}
+
+.header__btn-wrapper-bottom {
+    grid-area: bot;
+    justify-self: center;
+
+     @media screen and (min-width: 1280px) {
+     height: 42px;
+     justify-self: end;
+     align-self: end;
+     }
+
+
 }
 
 
 
 .header__user-icon {
+    grid-area: user;
+    justify-self: end;
+
     width: 34px;
     height: 34px;
     background-color: antiquewhite;
     border-radius: 50%;
+
+    @media screen and (min-width: 768px) {
+    width: 38px;
+    height: 38px;
+    justify-self: start;
+     }
+    @media screen and (min-width: 1280px) {
+    width: 42px;
+    height: 42px;
+   
+     }
 }
 
 .header__form {
+  grid-area: form;  
   display: flex;
   justify-content: space-between;
   width: 252px;
@@ -246,15 +321,26 @@
 
 
 .header__logo-link {
+  grid-area: logo;
+  justify-self: center;
+
   display: flex;
+  gap: 8px;
   align-items: center;
   cursor: pointer;
+  height: 32px;
+
+    @media screen and (min-width: 768px) {
+    justify-self: start;
+    align-self: end;
+  }
 }
+
 .header__film-svg {
   display: inline-block;
   width: 32px;
   height: 32px;
-  margin-right: 8px;
+  
   stroke-width: 0;
   stroke: currentColor;
   stroke: var(--primary-text-color);
@@ -266,7 +352,7 @@
   @media screen and (min-width: 1280px) {
     width: 59px;
     height: 59px;
-    margin-right: 16px;
+
   }
 }
 

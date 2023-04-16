@@ -1,0 +1,59 @@
+.lbrary__grid-container {
+display: grid;
+grid-template-columns: repeat(2, auto);
+grid-template-rows: 34px auto 32px 34px;
+grid-row-gap: 8px;
+grid-template-areas: 
+    'top user'
+    'form form' 
+    'logo logo'
+    'bot bot' ;
+
+   @media screen and (min-width: 768px) {
+   grid-template-columns: 165px 196px auto auto;
+   grid-column-gap: 8px;
+   grid-template-rows: 38px auto;
+   grid-template-areas: 
+    'form top user bot'
+    'logo logo logo logo' 
+     ;
+
+     }
+   @media screen and (min-width: 1280px) {
+   grid-template-columns: 187px 220px auto auto;
+   grid-template-rows: 42px auto;
+  
+     }
+
+}
+
+
+.header__btn-watched {
+   
+    width: 87px;
+    font-weight: 500;
+
+      @media screen and (min-width: 768px) {
+     width: 86px;
+     }
+     @media screen and (min-width: 1280px) {
+     width: 120px;
+     }
+}
+
+.header__btn-queue {
+   width: 86px;
+   font-weight: 500;
+
+    @media screen and (min-width: 768px) {
+     width: 86px;
+     }
+     @media screen and (min-width: 1280px) {
+     width: 117px;
+     }
+}
+
+.header__btn-category--current {
+  color: var(--primary-text-color);
+  background: var(--current-color);
+}
