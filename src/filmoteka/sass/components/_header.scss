@@ -206,10 +206,14 @@
     grid-area: bot;
     justify-self: center;
 
-     @media screen and (min-width: 1280px) {
-     height: 42px;
+     @media screen and (min-width: 768px) {
+     height: 38px;
      justify-self: end;
      align-self: end;
+     }
+     @media screen and (min-width: 1280px) {
+     height: 42px;
+   
      }
 
 
@@ -331,8 +335,13 @@
   height: 32px;
 
     @media screen and (min-width: 768px) {
+    height: 40px;    
     justify-self: start;
     align-self: end;
+  }
+    @media screen and (min-width: 768px) {
+    height: 60px;    
+    
   }
 }
 
