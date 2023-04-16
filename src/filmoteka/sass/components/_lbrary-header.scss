@@ -10,7 +10,7 @@ grid-template-areas:
     'bot bot' ;
 
    @media screen and (min-width: 768px) {
-   grid-template-columns: 165px 196px auto auto;
+   grid-template-columns: 165px 202px auto auto;
    grid-column-gap: 8px;
    grid-template-rows: 38px auto;
    grid-template-areas: 
@@ -20,7 +20,7 @@ grid-template-areas:
 
      }
    @media screen and (min-width: 1280px) {
-   grid-template-columns: 187px 220px auto auto;
+   grid-template-columns: 187px 224px auto auto;
    grid-template-rows: 42px auto;
   
      }
