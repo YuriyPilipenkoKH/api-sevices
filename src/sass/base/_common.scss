@@ -1,1 +1,25 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+.main__list {
+ padding: 10px;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ width: 200px;
+  }
+
+.main__list li a{
+    color: #7f7f7f;
+    font-weight: 600 ;
+    transition: all 0.5s;
+
+   }
+   .main__list li{
+    padding: 4px;
+   }
+
+   .main__list li a:hover {
+    color: #2196f3;
+    transition: all 0.5s;
+   }
