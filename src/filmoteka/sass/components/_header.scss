@@ -185,10 +185,49 @@
 }
 
 .header__form-input{
-    padding: 0 16px;
-    background: transparent;
-    border: transparent;
-    outline: transparent;
+  height: 34px;
+  padding-left: 14px;
+  border-radius: 17px;
+  padding: 0 16px;
+  background: transparent;
+  border: transparent;
+  outline: transparent;
+
+    @media screen and (min-width: 768px) {
+    max-width: 120px;
+    height: 38px;
+  }
+
+  color: var(--secondary-text-color);
+  @media screen and (min-width: 1280px) {
+    max-width: 142px;
+    height: 42px;
+  }
+}
+
+.header__form-input::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(12 / 14);
+
+  color: var(--secondary-text-color);
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+    line-height: calc(14 / 16);
+  }
+}
+
+.header__form-btn {
+  width: 45px;
+  padding: 7px;
+  cursor: pointer;
+  background-color: var(--primary-text-color);
+  border: transparent;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-radius: 21px;
 }
 
 .header__form-svg {
