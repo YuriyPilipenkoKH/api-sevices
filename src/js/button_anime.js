@@ -1,4 +1,4 @@
-import '../css/film-search.scss'
+
 
 const refs = {
     container: document.querySelector('.container'),

@@ -29,7 +29,7 @@ else {
   console.log('mobile');
 }
 
-export function renderTwoButtons () {
+ function renderTwoButtons () {
 
 }
 
