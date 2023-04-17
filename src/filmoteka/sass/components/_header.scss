@@ -173,14 +173,16 @@ grid-template-areas:
      height: 42px;
      border-radius: 21px;
      }
+
+        &:hover, 
+        &:focus {
+         outline: none;
+         background-color: var(--footer-text-color);
+         color: var(--primary-text-color);
+        }
 }
 
-.btn:hover,
-.btn:focus {
-    outline: none;
-    background-color: var(--footer-text-color);
-    color: var(--primary-text-color);
-}
+
 
 .header__btn-home {
     width: 87px;
@@ -271,14 +273,16 @@ grid-template-areas:
     height: 42px;
    
      }
+
+     &:hover, 
+     &:focus {
+        outline: none;
+        background: var(--footer-text-color);
+        fill: #aaa;
+     }
 }
 
-.header__user-icon:hover,
-.header__user-icon:focus {
-    outline: none;
-  
-    background: var(--footer-text-color);
-}
+
 
 .header__form {
   position: relative;
